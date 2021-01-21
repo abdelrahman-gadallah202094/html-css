@@ -1,0 +1,762 @@
+*{
+    box-sizing : border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Varela Round', sans-serif;
+}
+.container{
+    margin : auto;
+    width : 80%;
+}
+.clearfix{clear : both;} /*to solve float problem*/
+ul{list-style : none;}
+li{display : inline-block;}
+a{ color : #fff;text-decoration : none;}
+h1, h2, h3, h4, h5, h6{font-family : montserrat,sans-serif;}
+.section-header{
+    text-align : center;
+    margin-bottom : 70px;
+}
+.section-header .section-title{
+    font-size : 40px;
+    text-transform : capitalize;
+    margin-bottom : 10px;
+}
+.section-header .section-line{
+    width : 40px;
+    height : 4px;
+    background-color : dodgerblue;
+    display : block;
+    margin : auto;
+}
+.pd-y{
+    padding : 120px 0;
+}
+.mg{
+    margin: 0 5%;
+}
+/****************************1-general style*****************************/
+/********************2-common style************************/
+/*
+-overlay
+-opacity hover
+-section header
+-section padding
+-hover effect 1(left to right)
+-hover effect 2(top to bottom)
+*/
+.overlay{
+    position : absolute;
+    width : 100%;
+    height : 100%;
+    top : 0;
+    left : 0;
+    background-color : rgba(0,0,0,.7);
+}
+button{font-family : inherit}
+.do_hover:hover{opacity : .7;}
+.do_hover{transition : opacity 1s}
+.ltr-effect,.tb-effect{
+    position : relative;
+}
+.ltr-effect:after,.tb-effect:after{
+    position : absolute;
+    content : "";
+    top : 0;
+    left : 0;
+    background-color : #333;
+    z-index : -1;
+}
+.ltr-effect:after{
+  height : 100%;
+    width : 0;
+    transition : width .5s;
+}
+.tb-effect:after{
+    width : 100%;
+    height : 0;
+    transition : height .5s;
+}
+.ltr-effect:hover:after{
+    width : 100%;
+}
+.tb-effect:hover:after{
+    height : 100%;
+}
+.ltr-effect:hover .fully-head{
+    color : #fff;
+}
+.blog-item:hover .blog-span{
+    color : deepskyblue;
+}
+.blog-item:hover .blog-item-month{
+    color : #fff;
+}
+/********************2-common style************************/
+/************************ 3-sections ******************/
+
+/************************ 3-1- header sections ******************/
+.header{
+    position : fixed;
+    width : 100%;
+    z-index: 3;
+    background-color: rgba(0,0,0,.4)
+}
+.header_logo{
+    float : left;
+    width :40%
+}
+.header_logo img{
+    width : 20%;
+    margin-top : 15px;
+}
+.header_nav{
+    float : left;
+    width : 60%;
+}
+.header_nav ul.nav{
+    text-align : right;
+}
+
+.header_nav ul.nav > li > a{
+    font-size : 18px;
+    padding : 30px 10px;
+    display : block;
+    text-transform : capitalize;
+    color : #ccc;
+}
+ul.nav > li >a:after, .header_nav .nav .active a:after{
+    content : "";
+    display : block;
+    height : 3px;
+    background-color : darkturquoise;
+    margin-top : 2px;
+    transition : width .5s;
+}
+.nav > li a:after{width : 0;}
+.nav .active a:after{width : 100%;}
+.nav > li a:hover:after{width : 100%;}
+.dropdown{
+    position : relative;
+}
+.dropdown-menu{
+    position : absolute;
+    text-align : center;
+    width : 150px;
+    text-align: center;
+    background-color: deepskyblue;
+    left : -50%;
+    top : 70%;
+    opacity :0;
+    visibility: hidden;
+    transition: opacity 1s;
+
+}
+.dropdown:hover .dropdown-menu{
+    opacity :1;
+    visibility: visible;
+}
+.dropdown-menu li a{
+    display : block;
+    padding : 10px;
+}
+/************************ 3-1- header sections ******************/
+/************************ 3-1- home sections ******************/
+.home{
+    background-image : url(../images/background/background1.webp);
+    background-size : cover;
+    height : 100vh;
+    position : relative;
+}
+.home .creative{
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%,-50%);
+    text-align : center;
+    color : #fff;
+    width : 65%;
+}
+.home .creative_head{
+    font-size : 48px;
+    text-transform : uppercase;
+    margin-bottom : 20px;
+}
+.home .creative_text{
+    letter-spacing : 2px;
+    line-height : 1.6;
+}
+.home .creative .btn{
+    border : 0;
+    outline : 0;
+    width : 150px;
+    padding : 10px;
+    cursor : pointer;
+    font-size : 18px;
+    text-transform : capitalize;
+    margin : 20px 5px;
+    border-radius : 5px;
+}
+.home .creative .btn.btn_get{
+    background-color : #fff;
+}
+.btn_learn{
+    background-color : dodgerblue;
+    color : #fff;
+}
+/************************ 3-1- home sections ******************/
+/************************ 3-1- about sections ******************/
+.about-fully{
+    overflow : hidden;
+    height : auto;
+}
+.fully-all{
+    border : 1px solid #eee;
+    float : left;
+    width : 30%;
+    height : 300px;
+    text-align : center;
+    padding :30px;
+}
+
+.fully-all i{
+    margin-bottom : 20px;
+    color : deepskyblue;
+}
+.fully-all .fully-head{
+    font-size : 25px;
+    text-transform: capitalize;
+    margin-bottom : 10px;
+    transition : color .5s;
+}
+.fully-text{
+    color : #888;
+    line-height: 1.7;
+    margin-bottom : 15px;
+
+}
+.fully-all-link{
+    color: deepskyblue;
+    text-transform: capitalize;
+    font-size : 20px;
+}
+/************************ 3-4-about section ******************/
+/************************ 3-4-portfolio section ******************/
+.portfolio{
+    background-color : #f5f5f5;
+}
+.portfolio-image{
+    overflow : hidden;
+}
+.image-section{
+    width : 32%;
+    float : left;
+    margin-bottom : 2%;
+    position : relative;
+    padding : 20px;
+}
+.image-section.mg{margin :0 2%;}
+.image-section img { width : 100%;}
+.image-container{
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color : rgba(0,0,0,.5);
+    visibility: hidden;
+    opacity : 0;
+    transition : opacity .5s;
+}
+.image-section:hover .image-container{
+    opacity : 1;
+    visibility : visible; 
+}
+.container-content{
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%,-50%);
+    text-align : center;
+    width : 80%;
+    
+}
+.content-head{
+    text-transform : uppercase;
+    color : darkturquoise;
+    margin-bottom : 10px;
+    letter-spacing : 2px;
+    position : relative;
+    top : 10px;
+    opacity :f 0;
+    transition : top .5s;
+    transition-delay : .5s;
+}
+.content-text{
+    color : #fff;
+    font-size : 18px;
+    letter-spacing : 2px;
+    font-weight : bold;
+    display : block;
+    opacity : 0;
+    position : relative;
+    top : 10px;
+    margin-bottom : 10px;
+    transition : top .5s;
+    transition-delay : .4s;
+}
+.container-content a{
+    opacity : 0;
+    position : realative;
+    top : 10px;
+    transition : top .5s;
+    transition-delay : .5s;
+}
+.container-content i{
+    background-color :deepskyblue;
+    display : inline-block;
+    width : 40px;
+    margin-right : 2px;
+    padding : 15px;
+    
+}
+.image-section:hover .content-head, .image-section:hover .content-text,
+.image-section:hover a{
+    top : 0px;
+    opacity : 1;
+}
+/************************ 3-4- portfolio section ******************/
+/*********************3-5services section*********************************/
+.services-container{
+    overflow : hidden;
+}
+.container-offer{
+    width : 32%;
+    float : left;
+    border : 1px solid #eee;
+    padding : 35px;
+    margin-bottom : 2%;
+}
+.container-offer.mg{
+    margin : 0 2%;
+}
+.container-offer i{
+    margin : 10px 0;
+    display : inline-block;
+    text-align : left;
+    color :dodgerblue;
+}
+.services-head{
+    display : inline-block;
+    margin-left : 6px;
+    text-transform : capitalize;
+    transition : color .5s;
+}
+.services-text{
+    text-align : justify-all;
+    color : #888;
+    margin-left : 50px;
+    line-height : 1.6;
+    margin-bottom : 20px;
+}
+.ltr-effect:hover .services-head{color : #fff;}
+/*********************3-5services section*********************************/
+/******************3-6-prices section**********************/
+.prices{
+    background-color : #f5f5f5;
+    width : 100%;
+}
+.prices-container{
+    overflow : hidden;
+}
+.prices-choose{
+    float : left;
+    width : 50%;
+}
+.prices-choose:nth-of-type(2){
+    margin-left : 5%;
+    width : 45%
+}
+.prices-container .section-header{text-align : left;margin-bottom : 50px;}
+.prices-choose .section-line{
+    margin : 0 0 10px 0;
+}
+.prices-text{
+    color : #888;
+    line-height : 1.5;
+    padding-bottom : 10px;
+}
+.prices-list li{
+    color : #888;
+}
+.prices-choose i{
+    border : 1px solid dodgerblue;
+    color : dodgerblue;
+    padding : 5px 5px;
+    margin : 5px 5px 5px 0;
+    width : 30px;
+    height : 30px;
+    border-radius : 50%;
+}
+.prices-choose img{width : 100%;}
+.choose-bollets{text-align : center;}
+.choose-bollets li{
+    display : inline-block;
+    width : 10px;
+    height : 10px;
+    background-color : #ddd;
+    border-radius : 50%;
+    margin : 5px;
+}
+.choose-bollets .active {background-color : darkturquoise;}
+.choose-bollets li:hover{background-color : darkturquoise;}
+/******************3-6-prices section**********************/
+/*************************3-7-team section***********************/
+.team{
+    background-image : url(../images/background/background2.webp);
+    background-size : cover;
+    background-attachment: fixed;
+    height : 300px;
+    position : relative;
+
+}
+.team-numbers{
+    overflow : hidden;
+    padding : 80px;
+}
+.numbers-content{
+    float : left;
+    width : 25%;
+    text-align : center;
+}
+.numbers-content i{
+    color : deepskyblue;
+    margin-bottom : 10px;
+    
+}
+.numbers-head{
+    color : #fff;
+    font-size : 30px;
+    font-weight : bold;
+}
+.numbers-text{
+    color : #fff;
+    text-transform : capitalize;
+    margin-bottom : 50px;
+}
+
+/*************************3-7-team section***********************/
+ /************************3-8-blog section*****************************/
+.blog-plan{
+    overflow : hidden;
+}
+.blog-item{
+    float : left;
+    width : 30%;
+    text-align : center;
+    border : 1px solid #eee;
+    padding : 30px;
+}
+.blog-span{
+    text-transform : uppercase;
+    color : #999;
+    transition : color .5s;
+}
+.blog-item-month{
+    border : 2px solid deepskyblue;
+    border-radius : 50%;
+    margin : auto;
+    width : 105px;
+    height :105px;
+    text-align : center;
+    padding : 15px;
+    margin-top : 15px;
+    margin-bottom : 15px;
+    transition : color .5s;
+}
+.blog-item-month-head{
+    font-size : 35px;
+    font-weight : bold;
+}
+.blog-item-month-span{
+    text-transform : uppercase;
+    font-size : 15px;
+}
+.blog-list li{
+    display : block;
+    line-height : 1.8;
+    color : #999;
+    margin-bottom : 10px;
+}
+.blog-btn{
+    border : 0;
+    outline : 0;
+    background-color : #fff;
+    text-transform : capitalize;
+    border : 1px solid deepskyblue;
+    width : 150px;
+    padding : 10px;
+    color : deepskyblue;
+    letter-spacing : 1px;
+    cursor : pointer;
+    margin : 10px
+}
+ /************************3-8-blog section*****************************/
+/**********************3-9character section****************************************/
+.character{
+    background-image : url(../images/background/background3.webp);
+    background-attachment: fixed;
+    height : 400px;
+    position : relative;
+    
+}
+.character-container{
+    overflow : hidden;
+    padding: 120px 0;
+    width : 70%;
+    margin : auto;
+}
+.charcter-doe{
+    float : left;
+    width : 49%;
+    color : #fff;
+    margin : auto;
+}
+.charcter-doe:first-of-type{
+     margin-right : 2%;
+}
+.charcter-doe-div{
+    overflow : hidden;
+    margin-bottom : 20px;
+    margin-top : 30px;
+}
+.charcter-doe-div-img{
+    float : left;
+    width : 12%;
+    margin-right : 20px;
+}
+.charcter-doe-div-img img{
+    width : 100%;
+    border-radius : 50%;
+    cursor : pointer;
+}
+.charcter-doe-div-text-head{
+    margin : 10px 0 5px 0;
+    text-transform : capitalize;
+    font-size : 20px;
+}
+.charcter-doe-div-text-title{
+    color : cornflowerblue;
+    text-transform : uppercase;
+    font-size : 12px;
+}
+.charcter-doe-text{
+    line-height : 1.7;
+}
+/**********************3-9character section****************************************/
+/************10-our-team section********************************************/
+.our-team-container{overflow : hidden}
+.our-team-items{
+    float : left;
+    width : 30%;
+    text-align : center;
+    background-color : #f8f8f8;
+     padding : 20px;
+}
+.our-team-img{
+    position : relative;
+}
+.our-team-img img{
+    width : 100%;
+}
+.team-overlay{
+   position : absolute;
+    top : 0;
+    left : 0;
+    bottom : 0;
+    right : 0;
+    background: rgba(0,0,0,.5);
+    opacity : 0;
+    visibility : hidden;
+}
+.our-team-img a{
+    background-color : dodgerblue;
+    display : block;
+    width : 40px;
+    height : 40px;
+    margin-left : auto;
+}
+.our-team-img a i{
+    line-height : 40px; 
+}
+.our-team-items:hover .team-overlay{
+    visibility : visible;
+    opacity : 1;
+}
+.team-info{
+    padding : 10px;
+}
+.team-head{
+    text-transform : capitalize;
+    margin-bottom : 10px;
+    transition : color .5s;
+    color : #333
+}
+.team-title{
+    text-transform : uppercase;
+    color : #777;
+    padding-bottom : 15px;
+    transition : color .5s;
+}
+.our-team-items.tb-effect{
+    z-index : 1;
+}
+.our-team-items:hover .team-head{
+    color : #fff;
+}
+.our-team-items:hover .team-title{
+    color : dodgerblue;
+}
+/************10-our-team section********************************************/
+/******************************11-testenomial*******************************************/
+.testenomial{
+    background-color : #f8f8f8;
+}
+.testenomial-container{
+    overflow : hidden;
+}
+.testenomial-item{
+    background-color : #fff;
+    float : left;
+    width : 30%;
+}
+.testenomial-img{
+    margin-bottom : 10px;
+}
+.testenomial-img img{
+    width : 100%;
+}
+.testenomial-info{
+    padding : 15px;
+}
+.testenomial-info a{
+    color : #333;
+    margin-right : 15px;
+}
+.testenomial-info a i{
+    color : dodgerblue;
+    margin-right : 5px;
+}
+.testenomial-head{
+    margin : 15px 0;
+}
+.testenomial-title{
+    color : #777;
+    line-height : 1.5;
+    margin-bottom : 15px;
+}
+.testenomial-span{
+    color : dodgerblue;
+    cursor : pointer;
+    text-transform : capitalize;
+    display : block;
+    padding-bottom : 20px;
+}
+/******************************11-testenomial*******************************************/
+/******************3-11-contact section****************************************/
+.contact-container{
+    overflow : hidden;
+}
+.contact-item{
+    float : left;
+    width : 30%;
+    text-align : center;
+}
+.contact-item i{
+    color : dodgerblue;
+    margin-bottom : 10px;
+}
+.contact-head{
+    text-transform : capitalize;
+    margin-bottom : 20px;
+}
+.contact-title{
+    color : #888;
+}
+.contact-form{
+    width : 60%;
+    padding : 50px 0;
+    overflow : hidden;
+    margin : auto;
+}
+.form-input{
+    width : 100%;
+}
+.form-input input{
+    width : 47%;
+    float : left;
+    margin-right : 1%;
+    padding : 5px;
+    border-radius : 5px;
+    outline : 0;
+    margin-bottom : 15px;
+    background-color : #f5f5f5;
+
+}
+.contact-form-subject{
+    width: 95%;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color : #f5f5f5;
+    outline : 0;
+}
+.contact-form textarea{
+    width : 95%;
+    outline : 0;
+    padding : 5px;
+    background-color : #f5f5f5;
+}
+.contact-btn{
+    border : 0;
+    outline : 0;
+    margin : auto;
+    display : block;
+    margin-top : 10px;
+    background-color : dodgerblue;
+    cursor : pointer;
+    padding : 10px;
+    width : 140px;
+    color : #fff;
+    font-size : 16px;
+}
+/******************3-11-contact section****************************************/
+/***************************************footer*****************************************/
+footer{
+    background-color : #333;
+    text-align : center;
+    padding : 40px;
+}
+.footer-content a {
+    background-color : dodgerblue;
+    width : 40px;
+    height : 40px;
+    display : inline-block;
+    margin : 10px 5px 20px 0;
+    border-radius: 50%
+}
+.footer-content a i{
+    line-height : 40px;
+}
+.footer-text{
+    color : #888;
+    text-transform : uppercase;
+    font-size : 12px;
+}
+.text-span{
+    color : dodgerblue;
+}
+/***************************************footer*****************************************/
+/************************ 3-sections ******************/
